@@ -1,9 +1,18 @@
 import { Routes } from '@angular/router';
-import { EmptyRouteComponent } from './empty-route/empty-route.component';
+import { Config } from './config/config';
+import { Base } from './base/base';
 
 export const routes: Routes = [
   {
+    path: '',
+    component: Base,
+  },
+  {
+    path: 'angular/config',
+    component: Config,
+  },
+  {
     path: '**',
-    component: EmptyRouteComponent,
+    redirectTo: '',
   },
 ];
