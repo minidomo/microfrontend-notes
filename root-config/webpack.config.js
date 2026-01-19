@@ -10,8 +10,14 @@ module.exports = (webpackConfigEnv, argv) => {
     webpackConfigEnv,
     argv,
     disableHtmlGeneration: true,
+outputSystemJS: true,
   });
 
+if (defaultConfig.mode === "production") {
+    require(dotenv).config({ path: ".env.production" });
+} else {
+    require(dotenv).config();
+}
   return merge(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
     plugins: [

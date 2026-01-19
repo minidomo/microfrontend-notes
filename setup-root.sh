@@ -8,6 +8,17 @@ fi
 
 (
     cd "$target_dir"
+
+    if [ ! -f "package.json" ]; then
+        echo "No package.json found"
+        exit 1
+    fi
+
+    if ! grep -q "single-spa" package.json; then
+        echo "single-spa not found"
+        exit 1
+    fi
+
     rm -rf .husky .git
     sed -i '/husky/d' package.json
     sed -i '/pretty-quick/d' package.json
@@ -18,11 +29,20 @@ fi
 
     touch .env .env.example .env.production
 
-    sed -i '/disableHtmlGeneration/a\
+    if ! grep -q "outputSystemJS" webpack.config.js; then
+        sed -i '/disableHtmlGeneration/a\
 outputSystemJS: true,
 ' webpack.config.js
+    fi
 
-    set -i '//i\
-    
+    if ! grep -q "dotenv" webpack.config.js; then
+
+        sed -i '/return merge/i\
+if (defaultConfig.mode === "production") {\
+    require('dotenv').config({ path: ".env.production" });\
+} else {\
+    require('dotenv').config();\
+}
 ' webpack.config.js
+    fi
 )
