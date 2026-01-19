@@ -13,6 +13,12 @@ module.exports = (webpackConfigEnv, argv) => {
     outputSystemJS: true,
   });
 
+  if (defaultConfig.mode === 'production') {
+    require('dotenv').config({ path: '.env.production' })
+  } else {
+    require('dotenv').config()
+  }
+
   return merge(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
     plugins: [
@@ -22,6 +28,8 @@ module.exports = (webpackConfigEnv, argv) => {
         templateParameters: {
           isLocal: webpackConfigEnv && webpackConfigEnv.isLocal,
           orgName,
+          ROOT_CONFIG_URL: process.env.ROOT_CONFIG_URL,
+          ANGULAR_URL: process.env.ANGULAR_URL,
         },
       }),
     ],

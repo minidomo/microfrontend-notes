@@ -28,18 +28,16 @@
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
 
-  <% if (isLocal) { %>
-    <script type="systemjs-importmap">
+  <script type="systemjs-importmap">
     {
       "imports": {
-        "@project/root-config": "//localhost:9000/project-root-config.js",
-        "@project/angular": "//localhost:4200/main.js"
+        "@project/root-config": "<%= ROOT_CONFIG_URL %>",
+        "@project/angular": "<%= ANGULAR_URL %>"
       }
     }
   </script>
-    <% } %>
 
-      <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@5.1.1/dist/import-map-overrides.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@5.1.1/dist/import-map-overrides.js"></script>
 </head>
 
 <body>
