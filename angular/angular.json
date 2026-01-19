@@ -16,7 +16,6 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -33,7 +32,9 @@
               "libraryName": "angular",
               "libraryTarget": "umd"
             },
-            "deployUrl": "http://localhost:4200/"
+            "deployUrl": "http://localhost:4200/",
+            "index": "src/index.html",
+            "outputPath": "dist/angular"
           },
           "configurations": {
             "production": {
