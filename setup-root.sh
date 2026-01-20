@@ -63,7 +63,6 @@ return System.import(name);
 
     sed -i '/<%/d' "$ejs_file"
     sed -i '/import-map-injector.js/d' "$ejs_file"
-    sed -i '/single-spa-welcome/d' "$ejs_file"
     sed -i '/rel="preload"/d' "$ejs_file"
     sed -i 's/injector-importmap/systemjs-importmap/g' "$ejs_file"
     sed -i 's|esm/single-spa.min.js|system/single-spa.min.js|g' "$ejs_file"
@@ -71,7 +70,7 @@ return System.import(name);
 <script src="https://cdn.jsdelivr.net/npm/systemjs@6.15.1/dist/system.min.js"></script>\
 <script src="https://cdn.jsdelivr.net/npm/systemjs@6.15.1/dist/extras/amd.min.js"></script>
 ' "$ejs_file"
-
+    sed -i 's|\(root-config": "\)[^"]*|\1<%= ROOT_CONFIG_URL %>|' "$ejs_file"
 
     npm run format
 )
