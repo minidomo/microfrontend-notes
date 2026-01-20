@@ -23,6 +23,9 @@ fi
     sed -i '/husky/d' package.json
     sed -i '/pretty-quick/d' package.json
 
+    npm i @types/react@latest @types/react-dom@latest @types/node@22 \
+        @types/jest@27 @types/systemjs @types/webpack-env typescript@latest -D
+    npm i single-spa@latest
     npm update --save
     npm run format
 )
