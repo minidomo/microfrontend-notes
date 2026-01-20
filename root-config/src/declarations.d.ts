@@ -1,6 +1,6 @@
 declare module "*.html" {
   const rawHtmlFile: string;
-  export default rawHtmlFile;
+  export = rawHtmlFile;
 }
 
 declare module "*.bmp" {
