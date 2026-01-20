@@ -5,7 +5,3 @@ My notes and examples on creating microfrontends with [single-spa](https://singl
 ## Why SystemJS
 
 With the [migration to ESM](https://github.com/single-spa/single-spa.js.org/blob/systemjs-to-esm-migration/blog/2025-01-25-systemjs-to-esm-migration.md) already existing, the official support for Angular has been a [slow process](https://github.com/single-spa/single-spa-angular/issues/534).
-
-```sh
-create-single-spa --dir root-config --moduleType root-config --skipInstall --layout --typescript --packageManager npm --orgName project
-```
