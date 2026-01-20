@@ -18,6 +18,11 @@
   -->
 
   <main>
-    <route default> This is working with SystemJS! </route>
+    <route path="angular/config">
+      <application name="@project/angular"></application>
+    </route>
+    <route default>
+      <application name="@project/angular"></application>
+    </route>
   </main>
 </single-spa-router>

@@ -28,6 +28,7 @@ module.exports = (webpackConfigEnv, argv) => {
           isLocal: webpackConfigEnv && webpackConfigEnv.isLocal,
           orgName,
           ROOT_CONFIG_URL: process.env.ROOT_CONFIG_URL,
+          ANGULAR_URL: process.env.ANGULAR_URL,
         },
       }),
     ],

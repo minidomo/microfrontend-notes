@@ -1,0 +1,17 @@
+services:
+  root:
+    build: ./root-config
+    ports:
+      - 49470:80
+    environment:
+      PROJECT123_ROOT_CONFIG_URL: http://localhost:49470/project-root-config.js
+      PROJECT123_ANGULAR_URL: http://localhost:53726/main.js
+    depends_on:
+      - angular
+
+  angular:
+    build: ./angular
+    ports:
+      - 53726:80
+    environment:
+      PROJECT123_API_URL: some_random_http_url
