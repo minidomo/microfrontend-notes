@@ -114,14 +114,14 @@ System.import('$name');
 This is working with SystemJS!
 ' "$html_file"
 
-    types_file=$(find src -type f -name "*.d.ts" -print -quit)
+    # types_file=$(find src -type f -name "*.d.ts" -print -quit)
 
-    # fix export method
-    sed -i 's/export = rawHtmlFile/export default rawHtmlFile/' "$types_file"
+    # # fix export method
+    # sed -i 's/export = rawHtmlFile/export default rawHtmlFile/' "$types_file"
 
     npm update --save
     npm i single-spa@latest single-spa-layout@latest
-    npm i @types/node@22 dotenv -D
+    npm i @types/node@22 dotenv @types/jest@27 @types/systemjs @types/webpack-env -D
     npm run format
 )
 
