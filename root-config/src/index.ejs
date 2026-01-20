@@ -28,7 +28,7 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "@project/root-config": "//localhost:9000/project-root-config.js",
+        "@project/root-config": "<%= ROOT_CONFIG_URL %>"
       }
     }
   </script>
@@ -41,9 +41,7 @@
   </noscript>
   <main></main>
   <script>
-    window.importMapInjector.initPromise.then(() => {
-      import('@project/root-config');
-    });
+System.import('@project/root-config');
   </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>
