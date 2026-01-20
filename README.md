@@ -2,7 +2,7 @@
 
 My notes and examples on creating microfrontends with [single-spa](https://single-spa.js.org/) because the [create-single-spa CLI](https://single-spa.js.org/docs/create-single-spa) is not always working, has out-of-date packages, and requires a decent amount of manual changes to switch to [SystemJS](https://single-spa.js.org/docs/recommended-setup/#systemjs) due to ESM being the default.
 
-The scripts in this repository are tailored to be done in a monorepo repository.
+The scripts in this repository are tailored to be done in a monorepo.
 
 ## Why SystemJS
 
