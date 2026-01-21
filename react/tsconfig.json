@@ -2,7 +2,9 @@
   "extends": "ts-config-single-spa",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "declarationDir": "dist"
+    "declarationDir": "dist",
+    "moduleResolution": "bundler",
+    "target": "es2022"
   },
   "files": ["src/project-react.tsx"],
   "include": ["src/**/*"],

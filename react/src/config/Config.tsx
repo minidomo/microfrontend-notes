@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { environment } from "../environment";
 
 export const Config: React.FC = () => {
   const some = {
     production: true,
-    apiUrl: "http://localhost:34593",
+    apiUrl: environment.apiUrl,
   };
 
   return (
