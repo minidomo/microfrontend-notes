@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Config } from "./config/Config";
-import { Base } from "./base/Base";
+import { Config } from "./config/config";
+import { Base } from "./base/base";
 
 export default function Root(props) {
   return (
