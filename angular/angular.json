@@ -34,7 +34,7 @@
             },
             "deployUrl": "http://localhost:4200/",
             "index": "src/index.html",
-            "outputPath": "dist/angular"
+            "outputPath": "dist"
           },
           "configurations": {
             "production": {
