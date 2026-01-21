@@ -9,6 +9,9 @@ module.exports = (webpackConfigEnv, argv) => {
     webpackConfigEnv,
     argv,
     outputSystemJS: true,
+    webpackConfigEnv: {
+      standalone: true,
+    },
   });
 
 

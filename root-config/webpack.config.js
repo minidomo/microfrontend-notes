@@ -29,6 +29,7 @@ module.exports = (webpackConfigEnv, argv) => {
           orgName,
           ROOT_CONFIG_URL: process.env.ROOT_CONFIG_URL,
           ANGULAR_URL: process.env.ANGULAR_URL,
+          REACT_URL: process.env.REACT_URL,
         },
       }),
     ],
