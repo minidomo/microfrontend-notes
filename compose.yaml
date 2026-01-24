@@ -1,9 +1,6 @@
 services:
   root:
     build: ./root-config
-    depends_on:
-      - angular
-      - react
     ports:
       - ${ROOT_PORT}:80
     environment:
