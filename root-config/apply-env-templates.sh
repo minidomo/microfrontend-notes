@@ -4,6 +4,11 @@ prefix="${CONFIG_ENV_PREFIX}"
 file_regex="${CONFIG_FILE_REGEX}"
 root_dir="${CONFIG_ROOT_DIR}"
 
+if [ -z "$prefix" ] || [ -z "$file_regex" ]; then
+    echo "CONFIG_ENV_PREFIX and/or CONFIG_FILE_REGEX are not set. Skipping substitution."
+    exit 0
+fi
+
 # obtains only the environment variables that start with a given prefix and formats it
 # to string matching: "$PREFIX_<name1>,$PREFIX_<name2>,..."
 target_env_vars=$(printenv | awk -F= '{print $1}' | grep "^$prefix" | sed 's/^/\$/g' | paste -sd,)
