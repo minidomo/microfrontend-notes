@@ -47,6 +47,7 @@
     "style-loader": "^3.3.4",
     "tailwindcss": "^4.1.12",
     "typescript": "~5.9.2",
-    "vitest": "^4.0.17"
+    "vitest": "^4.0.17",
+    "webpack-merge": "^6.0.1"
   }
 }
