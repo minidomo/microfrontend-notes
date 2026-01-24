@@ -2,14 +2,14 @@ services:
   root:
     build: ./root-config
     ports:
-      - 49470:80
+      - ${ROOT_PORT}:80
     environment:
-      PROJECT123_ROOT_CONFIG_URL: http://localhost:49470/project-root-config.js
-      PROJECT123_ANGULAR_URL: http://localhost:53726/main.js
-      PROJECT123_REACT_URL: http://localhost:63724/project-react.js
+      PROJECT123_ROOT_CONFIG_URL: http://localhost:${ROOT_PORT}/project-root-config.js
+      PROJECT123_ANGULAR_URL: http://localhost:${ANGULAR_PORT}/main.js
+      PROJECT123_REACT_URL: http://localhost:${REACT_PORT}/project-react.js
       CONFIG_ENV_PREFIX: PROJECT123
       CONFIG_FILE_REGEX: \./index\.html
-      NGINX_CACHE: -1
+      NGINX_CACHE: ${NGINX_CACHE}
     depends_on:
       - angular
       - react
@@ -17,13 +17,13 @@ services:
   angular:
     build: ./angular
     ports:
-      - 53726:80
+      - ${ANGULAR_PORT}:80
     environment:
       PROJECT123_API_URL: some_random_http_url
 
   react:
     build: ./react
     ports:
-      - 63724:80
+      - ${REACT_PORT}:80
     environment:
       PROJECT123_API_URL: another_random_http_url
