@@ -7,6 +7,9 @@ services:
       PROJECT123_ROOT_CONFIG_URL: http://localhost:49470/project-root-config.js
       PROJECT123_ANGULAR_URL: http://localhost:53726/main.js
       PROJECT123_REACT_URL: http://localhost:63724/project-react.js
+      NGINX_PORT: 80
+      CONFIG_PREFIX: PROJECT123
+      CONFIG_FILE_REGEX: \./index\.html
     depends_on:
       - angular
       - react
