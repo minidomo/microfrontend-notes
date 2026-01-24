@@ -1,7 +1,0 @@
-services:
-  app:
-    build: .
-    ports:
-      - 9502:80
-    environment:
-      PROJECT123_ROOT_CONFIG_URL: http://localhost:9502/project-root-config.js

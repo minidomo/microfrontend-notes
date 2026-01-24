@@ -1,6 +1,9 @@
 services:
   root:
     build: ./root-config
+    depends_on:
+      - angular
+      - react
     ports:
       - ${ROOT_PORT}:80
     environment:
@@ -10,9 +13,6 @@ services:
       CONFIG_ENV_PREFIX: PROJECT123
       CONFIG_FILE_REGEX: \./index\.html
       NGINX_CACHE: ${NGINX_CACHE}
-    depends_on:
-      - angular
-      - react
 
   angular:
     build: ./angular
