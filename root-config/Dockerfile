@@ -52,3 +52,8 @@ FROM nginx:alpine AS final
 COPY --from=build /usr/src/app/dist /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/templates/default.conf.template
 COPY --chmod=755 ./apply-env-templates.sh /docker-entrypoint.d
+
+ENV CONFIG_ENV_PREFIX=
+ENV CONFIG_FILE_REGEX=
+ENV CONFIG_ROOT_DIR=/usr/share/nginx/html
+ENV NGINX_CACHE=7d
