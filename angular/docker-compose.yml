@@ -1,7 +1,0 @@
-services:
-  app:
-    build: .
-    ports:
-      - 3945:80
-    environment:
-      PROJECT123_API_URL: some_random_url
