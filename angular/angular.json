@@ -23,9 +23,6 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
             "main": "src/main.single-spa.ts",
             "customWebpackConfig": {
               "path": "extra-webpack.config.js",
