@@ -20,6 +20,9 @@ services:
       - ${ANGULAR_PORT}:80
     environment:
       PROJECT123_API_URL: some_random_http_url
+      CONFIG_ENV_PREFIX: PROJECT123
+      CONFIG_FILE_REGEX: \./.*\.js
+      NGINX_CACHE: ${NGINX_CACHE}
 
   react:
     build: ./react
@@ -27,3 +30,6 @@ services:
       - ${REACT_PORT}:80
     environment:
       PROJECT123_API_URL: another_random_http_url
+      CONFIG_ENV_PREFIX: PROJECT123
+      CONFIG_FILE_REGEX: \./.*\.js
+      NGINX_CACHE: ${NGINX_CACHE}
