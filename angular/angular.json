@@ -33,7 +33,7 @@
               "libraryTarget": "system"
             },
             "deployUrl": "http://localhost:4200/",
-            "index": "src/index.html",
+            "index": "",
             "outputPath": "dist"
           },
           "configurations": {
